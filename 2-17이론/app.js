@@ -36,6 +36,11 @@ const randInd = function(arr) {
     return Math.floor(Math.random() * arr.length)
 }
 
+app.set("views", path.join(__dirname, 'views'))
+app.set('view engine', "pug")
+
+
+
 app.use('/', indexRoute)
 // app.get('/', (req, res) => {
 //     // res.send(`<h1>나의 첫 express<h1>`)
