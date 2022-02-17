@@ -6,6 +6,39 @@ const app = express()
 
 const indexRoute = require('./routes/index.js') // 라우터로 별도의 폴더로 만들자 -> 관리를 편하기 
 
+const mongoose = require("mongoose")
+
+mongoose.connect("mongodb://127.0.0.1:27017/nodejs", {
+    useNewUrlParser : true
+}).then(() => {
+    console.log("Connected to MongDB..")
+}).catch((err) => {
+    console.log(err.message)
+})
+
+const UserSchema = new mongoose.Schema({
+    name: String,
+    age: Number,
+    saveDate: {
+        type:Date,
+        default: Date.now,
+    }
+})
+
+const User = mongoose.model("User", UserSchema)
+
+const me = new User({
+    name : "jun seok",
+    age: 27,
+})
+
+me.save()
+.then(() => {
+    console.log(me)
+}).catch((err) => {
+    console.log(err.message)
+})
+
 const pickMyFood = () => {
     const food = ['돈까스', '김밥', '초밥', '떡볶이', '샌드위치', '짬뽕&탕수육', '짜장&탕수육', '파스타', '샌드위치', '부침개', '칼국수', '피자']
     let food_index = Math.floor(Math.random() * food.length)
