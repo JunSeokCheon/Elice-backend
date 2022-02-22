@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 //   };
 //   userData.push(newData);
 //   res.send({
-//     status: "succ",
+//     status: "succ",                       
 //   });
 // });
 
@@ -127,67 +127,34 @@ app.listen(3000, () => {
     }
   );
 });
-// function movieSearch(name) {
-//   return data.movieData.filter((v) => {
-//     return v.name.includes(name);
+
+// -----------------------------------------------------
+// app.get("/search2/:name", (req, res) => {
+// // http://localhost:3000/search2/도라
+// // /로 인자로 구분하나 인자를 하나만 줄 수 있다.
+// // 여러개도 가능하지만 가독성이 좋지 않다.
+// // http://localhost:3000/search2/도라/모가디/탐정
+//   const name = req.params.name;
+//   const result = movieSearch(name);
+//   res.send({
+//     result,
 //   });
-// }
+// });
+
+// app.get("/", (req,res) => {
+//     res.sendFile(path.join(__dirname, "./index.html"))
+// })
 
 
-// // app.get("/search2/:name", (req, res) => {
-// // // http://localhost:3000/search2/도라
-// // // /로 인자로 구분하나 인자를 하나만 줄 수 있다.
-// // // 여러개도 가능하지만 가독성이 좋지 않다.
-// // // http://localhost:3000/search2/도라/모가디/탐정
-// //   const name = req.params.name;
-// //   const result = movieSearch(name);
-// //   res.send({
-// //     result,
-// //   });
-// // });
-
-// // app.get("/", (req,res) => {
-// //     res.sendFile(path.join(__dirname, "./index.html"))
-// // })
-
-
-// // app.get("/search", (req, res) => { 
-// // // http://localhost:3000/search?name=도라
-// // // ? 로 구분하여 인자를 여러개 줄 수 있다.
-// //   const name = req.query.name;
-// //   const result = movieSearch(name);
-// //   res.send({
-// //     result,   // result 와 변수이름 result가 같으면 생략 가능, 다르다면 result : result2 이렇게 선언해줘야함.
-// //   });
-// // });
-// app.get("/search", (req, res) => {
-//     const name = req.query.name;
-//     res.send("Search");
+// app.get("/search", (req, res) => { 
+// // http://localhost:3000/search?name=도라
+// // ? 로 구분하여 인자를 여러개 줄 수 있다.
+//   const name = req.query.name;
+//   const result = movieSearch(name);
+//   res.send({
+//     result,   // result 와 변수이름 result가 같으면 생략 가능, 다르다면 result : result2 이렇게 선언해줘야함.
 //   });
-// /**
-//  * POST http://localhost:3000/search
-//  * 필요 헤더 JSON
-//  * 필요 바디 name:영화이름
-//  */
-//  app.post("/search", (req, res) => {
-//     const name = req.body.name;
-//     const result = movieSearch(name);
-//     res.send({
-//       result,
-//     });
-//   });
-  
-//   app.post("/sum", (req, res) => {
-//     const arr = req.body.arr;
-//     console.log(req.body);
-//     res.send({
-//       result: arr.reduce((a, b) => a + b),
-//     });
-//   });
-  
-//   app.listen(3000, () => {
-//     console.log("3000 port listen!");
-//   });
+// });
 // ----------------------------------------------------
 // const express = require("express");
 // const app = express();
