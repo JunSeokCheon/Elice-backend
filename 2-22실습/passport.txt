@@ -1,0 +1,23 @@
+passport 사용
+
+설치
+yarn add passport passport-local express-session
+
+const session = require("express-session");
+const passport = require("passport");
+
+app.use(
+    session({
+      secret: "secret",
+      resave: true,
+      saveUninitialized: true,
+    })
+  );
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+passport를 사용하려면 구현해야하는 것들
+Strategy
+serialize
+deserialize
