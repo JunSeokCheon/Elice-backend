@@ -40,7 +40,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use( 
   session({ // 세션 적용 함수(secret:세션 암호, resave: 세션을 항상 저장할지 여부, saveUninitialized:초기화되지 않은채 스토어에 저장되는 세션, store:데이터를 저장되는 형식)
     secret: "secret",
-    resave: true,
+    resave: true, 
     saveUninitialized: true,
   })
 );
